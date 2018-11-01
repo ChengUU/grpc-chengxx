@@ -5,8 +5,16 @@ import com.sgc.protobuf.Phonebook.AddPhoneToUserResponse;
 
 import io.grpc.stub.StreamObserver;
 
+/**
+ * RPC接口实现-服务实现
+ */
 public class PhoneServiceImp extends PhoneServiceGrpc.PhoneServiceImplBase{
 
+    /**
+     * 实现rpc调用接口
+     * @param request
+     * @param responseObserver
+     */
     @Override
     public void addPhoneToUser(AddPhoneToUserRequest request, StreamObserver<AddPhoneToUserResponse> responseObserver) {
         AddPhoneToUserResponse response = null;
