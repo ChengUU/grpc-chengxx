@@ -1,0 +1,22 @@
+syntax="proto3";
+option go_package = "user";
+option java_package = "com.sgc.protobuf";
+
+// 验证请求
+message VerifyRequest{
+    string d_finger=1; // 设备指纹
+    bytes u_finger=2; // 用户指纹
+}
+
+// 验证响应
+message VerifyResponse{
+    bool state=1; // 验证状态
+    string message=2; // 响应描述
+    string name=3; // 用户名
+    string password=4; // 用户密码
+}
+
+// RPC服务定义
+service IdentityVerify {
+    rpc addPhoneToUser(VerifyRequest) returns (VerifyResponse);
+}
