@@ -22,9 +22,9 @@ public class FingerVerifyServer {
      * 业务内容
      * @throws IOException
      */
-    private void start() throws IOException {
+    public void start() throws IOException, InterruptedException {
         /* The port on which the server should run */
-        int port = 288888;
+        int port = 38888;
         /** 构造RPC服务器 */
         server = ServerBuilder
                 .forPort(port)
@@ -41,6 +41,7 @@ public class FingerVerifyServer {
                 logger.info("*** server shut down");
             }
         });
+        blockUntilShutdown();
     }
 
     /**

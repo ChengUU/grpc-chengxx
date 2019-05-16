@@ -18,5 +18,5 @@ message VerifyResponse{
 
 // RPC服务定义
 service IdentityVerify {
-    rpc addPhoneToUser(VerifyRequest) returns (VerifyResponse);
+    rpc verify(VerifyRequest) returns (VerifyResponse);
 }
